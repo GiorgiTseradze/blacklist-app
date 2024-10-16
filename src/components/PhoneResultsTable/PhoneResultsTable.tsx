@@ -44,7 +44,7 @@ const PhoneResultsTable: React.FC<PhoneResultsTableProps> = ({
 							<td>{rowIndex + 1 + ")"}</td>
 							{keys.map((key) => {
 								if (Array.isArray(data[key])) {
-									return <td key={key}>{data[key][rowIndex] || ""}</td>;
+									return <td key={key}>{(data[key] as string[])[rowIndex] || ""}</td>;
 								} else {
 									return rowIndex === 0 ? (
 										<td key={key}>{data[key]}</td>
