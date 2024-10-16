@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { generateRandomPhoneNumbers } from "../utils/generatePhoneNumbers";
 import { useFetchBlacklist } from "../hooks/useFetchBlacklist";
 import PhoneResultsTable from "../components/PhoneResultsTable/PhoneResultsTable";
@@ -6,11 +5,9 @@ import PhoneResultsTable from "../components/PhoneResultsTable/PhoneResultsTable
 const Home = () => {
 	const { loading, data, error, timeTaken, fetchBlacklistData } =
 		useFetchBlacklist();
-	const [phones, setPhones] = useState<string[]>([]);
 
 	const handleGeneratePhones = () => {
 		const randomPhones = generateRandomPhoneNumbers();
-		setPhones(randomPhones);
 		fetchBlacklistData(randomPhones);
 	};
 
